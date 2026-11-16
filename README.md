@@ -1,6 +1,12 @@
 # Tech Quiz Application
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+**Status: Coursework / learning project.**
+
+A full-stack coursework quiz application with Cypress component and end-to-end test files.
+
+Preserved as a learning reference; production deployment and current compatibility have not been verified.
+
+
 [![Node.js](https://img.shields.io/badge/Node.js-16.x+-green)](https://nodejs.org/)
 [![React](https://img.shields.io/badge/React-18.x-blue)](https://reactjs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green)](https://www.mongodb.com/)
@@ -86,15 +92,15 @@ Contributions are welcome! Please feel free to submit a pull request.
 
 ## License
 
-This project is licensed under the MIT License.
+No project license file is currently provided. Preserve any upstream notices.
 
 ## Questions
 
 For any questions, please contact:
-- **Name**: Timothy McGrath
-- **Email**: treewzrd@gmail.com
+- **Name**: treeewzrd
+- **Email**: contact via GitHub
 - **GitHub**: [treeewzrd](https://github.com/treeewzrd)
 
 ---
 
- 2025 Timothy McGrath. All rights reserved.
+ 2025 treeewzrd. All rights reserved.
