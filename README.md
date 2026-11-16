@@ -1,106 +1,51 @@
-# Tech Quiz Application
+# Tech Quiz
 
-**Status: Coursework / learning project.**
+![Status](https://img.shields.io/badge/status-coursework-blue)
 
-A full-stack coursework quiz application with Cypress component and end-to-end test files.
+Coursework quiz application with Cypress component and end-to-end test files.
 
-Preserved as a learning reference; production deployment and current compatibility have not been verified.
+**Built with:** React, TypeScript, Express, MongoDB, Cypress.
 
+## Run locally
 
-[![Node.js](https://img.shields.io/badge/Node.js-16.x+-green)](https://nodejs.org/)
-[![React](https://img.shields.io/badge/React-18.x-blue)](https://reactjs.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green)](https://www.mongodb.com/)
+Requires Node.js/npm and a disposable MongoDB database. From the repository root:
 
-## Table of Contents
-- [Description](#description)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
-- [Questions](#questions)
-
-## Description
-
-Tech Quiz is a full-stack web application that allows users to test their technical knowledge through a series of multiple-choice questions. Built with the MERN stack (MongoDB, Express.js, React, and Node.js), this application provides an interactive quiz experience with real-time scoring.
-
-## Features
-
-- Interactive quiz interface
-- Randomized questions
-- Real-time scoring
-- Responsive design
-- Component and end-to-end testing with Cypress
-
-## Technologies Used
-
-- **Frontend**: React, TypeScript, Vite
-- **Backend**: Node.js, Express.js, TypeScript
-- **Database**: MongoDB Atlas
-- **Testing**: Cypress
-- **Styling**: Bootstrap 5
-
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/treeewzrd/TECH-QUIZ.git
-   cd TECH-QUIZ
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Set up environment variables:
-   - Create a `.env` file in the `server` directory
-   - Add your MongoDB connection string:
-     ```
-     MONGODB_URI=your_mongodb_connection_string
-     PORT=3001
-     ```
-
-## Usage
-
-1. Start the development server:
-   ```bash
-   npm run start:dev
-   ```
-
-2. Open your browser and navigate to:
-   ```
-   http://localhost:3001
-   ```
-
-3. Click "Start Quiz" to begin the quiz
-
-## Testing
-
-Run the test suite with:
 ```bash
-npm test
+npm install
 ```
 
-This will execute both component and end-to-end tests using Cypress.
+Create a private `server/.env` with `MONGODB_URI` pointing to the exercise database. Build and seed before starting:
 
-## Contributing
+```bash
+npm run build
+npm run seed
+```
 
-Contributions are welcome! Please feel free to submit a pull request.
+**Seeding clears the question collection before inserting sample questions.** Use a disposable database.
 
-## License
+The checked-in development configuration requests port 3001 for both Vite and the API. Run them separately to avoid that conflict:
 
-No project license file is currently provided. Preserve any upstream notices.
+```bash
+# Terminal 1: API on port 3001
+npm run server
+```
 
-## Questions
+```bash
+# Terminal 2: frontend on port 5173
+npm run dev --prefix client -- --port 5173 --strictPort
+```
 
-For any questions, please contact:
-- **Name**: treeewzrd
-- **Email**: contact via GitHub
-- **GitHub**: [treeewzrd](https://github.com/treeewzrd)
+Open the frontend at `http://localhost:5173`.
 
----
+## Tests
 
- 2025 treeewzrd. All rights reserved.
+Cypress's end-to-end base URL is currently `http://localhost:3001`, while the frontend setup above uses port 5173. With both servers running:
+
+```bash
+npm test -- --config baseUrl=http://localhost:5173
+npx cypress run --component
+```
+
+`npm test` runs end-to-end tests; component tests use the separate command above. No passing-test badge is claimed.
+
+Setup instructions were checked against source; builds and application behavior have not been rerun during this cleanup.
