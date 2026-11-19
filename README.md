@@ -1,6 +1,8 @@
 # Tech Quiz
 
-![Status](https://img.shields.io/badge/status-coursework-blue)
+**Coursework for school**
+
+![Coursework](https://img.shields.io/badge/Coursework-blue)
 
 Coursework quiz application with Cypress component and end-to-end test files.
 
